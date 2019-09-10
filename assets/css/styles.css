@@ -1,0 +1,320 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*-------------------------
+	General Styles
+--------------------------*/
+
+body {
+	font: 14px 'Segoe UI', 'Arial', sans-serif;
+	background: linear-gradient(#475fb6, #060c21);
+}
+
+a, a:visited {
+	outline: none;
+	color: #1c4f64;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+section, footer, header {
+	display: block;
+}
+
+/*----------------------------
+	The Header
+-----------------------------*/
+
+h1 {
+	font: bold 36px Cambria, "Hoefler Text", serif;
+	margin-bottom: 50px;
+	color: #fcf7f5;
+	text-shadow: 2px 2px 0 rgba(27, 9, 9, 0.4);
+}
+
+/*----------------------------
+	The Form
+-----------------------------*/
+
+#main {
+	width: 440px;
+	margin: 80px auto ;
+	position: relative;
+	text-align: center;
+}
+
+#main form {
+	width: 100%;
+	height: 450px;
+	background: url('../img/form_bg.png') no-repeat;
+	padding-top: 50px;
+}
+
+#main form .row {
+	position: relative;
+}
+
+#main form .row.error:after, #main form .row.success:after {
+	content: '';
+	position: absolute;
+	right: 60px;
+	top: 8px;
+	width: 32px;
+	height: 32px;
+	background: url('../img/icons.png') no-repeat;
+}
+
+#main form .row.error:after {
+	background-position: 0 -79px;
+}
+
+#main form input[type=text], #main form input[type=password] {
+	border: none;
+	background: url('../img/text-boxes.png') no-repeat top left;
+	font: 14px 'Segoe UI', 'Arial', sans-serif;
+	color: #888;
+	outline: none;
+	height: 48px;
+	margin: 0 auto 22px;
+	padding: 0 10px 0 50px;
+	width: 278px;
+}
+
+#main form input[disabled] {
+	opacity: 0.5;
+}
+
+#main form .email input {
+	background-position: 0 0;
+}
+
+#main form .email input:focus {
+	background-position: 0 -48px;
+}
+
+#main form .pass input {
+	background-position: 0 -96px;
+}
+
+#main form .pass input:focus {
+	background-position: 0 -144px;
+}
+
+/*----------------------------
+	The Submit Button
+-----------------------------*/
+
+#main form input[type=submit] {
+	border: 1px solid #004C9B;
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
+	color: #D3EBFF;
+	cursor: pointer;
+	display: block;
+	font: bold 24px Cambria, "Hoefler Text", serif;
+	margin: 230px auto 0;
+	padding: 10px;
+	text-shadow: 0 -1px 0 #444444;
+	width: 410px;
+	background-color: rgb(25, 28, 29);
+}
+
+#main form input[type=submit]:hover {
+	background-color: #0383d3;
+}
+
+#main form input[type=submit]:active {
+	background-color: #026fcb;
+	background-image: linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -o-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -moz-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -webkit-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -ms-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+}
+
+/*----------------------------
+	The Arrow
+-----------------------------*/
+
+#main form .arrow {
+	background: url("../img/arrow.png") no-repeat -10px 0;
+	height: 120px;
+	left: 214px;
+	position: absolute;
+	top: 392px;
+	width: 11px;
+	/* Defining a smooth CSS3 animation for turning the arrow */
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	-ms-transition: 0.3s;
+	transition: 0.3s;
+	/* Putting the arrow in its initial position */
+	-moz-transform: rotate(-134deg);
+	-webkit-transform: rotate(-134deg);
+	-o-transform: rotate(-134deg);
+	-ms-transform: rotate(-134deg);
+	transform: rotate(-134deg);
+}
+
+#main form .arrowCap {
+	background: url("../img/arrow.png") no-repeat -43px 0;
+	height: 20px;
+	left: 208px;
+	position: absolute;
+	top: 443px;
+	width: 20px;
+	z-index: 10;
+}
+
+#main form .meterText {
+	color: #575757;
+	font-size: 10px;
+	left: 189px;
+	line-height: 1.1;
+	position: absolute;
+	top: 485px;
+	width: 60px;
+}
+
+
+
+a {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #1670f0;
+    padding: 30px 70px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 20px 50px #0c002b;
+    overflow: hidden;
+    background: #0c002b;
+}
+
+a:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+a span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #0c002b, #1779ff);
+    animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+a span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0c002b, #1779ff);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+a span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, #0c002b, #1779ff);
+    animation: animate3 2s linear infinite;
+}
+
+@keyframes animate3 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+a span:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, #0c002b, #1779ff);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate4 {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+
+
+/*----------------------------
+	The Footer
+-----------------------------*/
+
+footer {
+	font: 14px 'Segoe UI', Arial, sans-serif;
+	background-color: #111111;
+	bottom: 0;
+	box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.4);
+	height: 45px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+footer h2 {
+	color: #EEEEEE;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+footer h2 i {
+	font-style: normal;
+	color: #888;
+}
